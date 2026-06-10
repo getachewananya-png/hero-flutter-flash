@@ -18,6 +18,7 @@ import matched5 from "@/assets/matched-5.jpg";
 import matched6 from "@/assets/matched-6.jpg";
 import matched7 from "@/assets/matched-7.jpg";
 import matched8 from "@/assets/matched-8.jpg";
+import subscribeStudents from "@/assets/subscribe-students.png.asset.json";
 import { Download } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -302,112 +303,63 @@ function Index() {
           </motion.div>
         </section>
 
-        {/* All-In-One Match Resources */}
-        <section id="resources" className="mt-24 md:mt-32">
-          <motion.h2
+        {/* Subscribe section */}
+        <section id="subscribe" className="mt-24 md:mt-32 relative overflow-hidden rounded-[36px] bg-gradient-to-b from-[#eaf4fb] to-[#fdfcf8] px-6 md:px-10 pt-14 md:pt-20">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="text-center font-extrabold tracking-tight text-[clamp(2rem,5vw,3.75rem)] leading-[1.05]"
+            className="max-w-3xl mx-auto text-center"
           >
-            ALL-IN-ONE MATCH<sup className="text-2xl md:text-3xl">®</sup> RESOURCES <span className="inline-block">📦</span>
-          </motion.h2>
+            <h2 className="font-extrabold tracking-tight text-[clamp(2rem,5vw,3.75rem)] leading-[1.05] text-neutral-900">
+              Find Your Tribe,<br />Build Your Network.
+            </h2>
+            <p className="mt-5 text-neutral-600 text-base md:text-lg max-w-xl mx-auto">
+              Connect with like-minded future physicians for mentorship, friendships, and residency opportunities.
+            </p>
 
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            {/* Left — student collage */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7 }}
-              className="relative rounded-3xl overflow-hidden border-[6px] border-[#0E2A47] shadow-2xl bg-[#0E2A47]"
+            <motion.form
+              onSubmit={(e) => e.preventDefault()}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-8 mx-auto flex items-center gap-2 w-full max-w-md bg-white border border-neutral-300 rounded-full p-1.5 shadow-md"
             >
-              <div className="bg-[#0E2A47] py-4 px-4 text-center">
-                <div className="inline-block bg-white rounded-md px-6 py-2">
-                  <span className="text-[#1AA7EC] font-extrabold tracking-tight text-2xl md:text-3xl">MATCH 2027 RESOURCES</span>
-                </div>
+              <div className="pl-3 text-neutral-400">
+                <Mail className="w-4 h-4" />
               </div>
-              <div className="grid grid-cols-4 gap-0.5 bg-[#0E2A47]">
-                {[matched1, matched3, matched2, matched4, matched5, matched6, matched7, matched8].map((src, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.6, rotate: i % 2 === 0 ? -15 : 15 }}
-                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ type: "spring", stiffness: 80, damping: 14, delay: i * 0.08 }}
-                    className="relative aspect-square overflow-hidden"
-                  >
-                    <img src={src} alt="Matched resident" loading="lazy" className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+              <input
+                type="email"
+                required
+                placeholder="Enter your email"
+                className="flex-1 bg-transparent outline-none text-sm py-2"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-neutral-900 text-white px-6 py-2.5 text-sm font-medium hover:bg-[#1AA7EC] transition-colors inline-flex items-center gap-1.5"
+              >
+                Join for Free <ArrowRight className="w-4 h-4" />
+              </button>
+            </motion.form>
+          </motion.div>
 
-            {/* Right — form */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-            >
-              <h3 className="text-3xl md:text-4xl font-extrabold text-[#1AA7EC] tracking-tight">
-                Delivered Right To Your Inbox <span>📬</span>
-              </h3>
-
-              <form onSubmit={(e) => e.preventDefault()} className="mt-6 space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-neutral-900 mb-1.5">First Name</label>
-                    <input type="text" placeholder="First Name" className="w-full rounded-md border border-neutral-300 bg-white px-4 py-3 text-sm outline-none focus:border-[#1AA7EC] focus:ring-2 focus:ring-[#1AA7EC]/20 transition" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-neutral-900 mb-1.5">Last Name</label>
-                    <input type="text" placeholder="Last Name" className="w-full rounded-md border border-neutral-300 bg-white px-4 py-3 text-sm outline-none focus:border-[#1AA7EC] focus:ring-2 focus:ring-[#1AA7EC]/20 transition" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-neutral-900 mb-1.5">Email Address</label>
-                  <input type="email" required placeholder="Email Address" className="w-full rounded-md border border-neutral-300 bg-white px-4 py-3 text-sm outline-none focus:border-[#1AA7EC] focus:ring-2 focus:ring-[#1AA7EC]/20 transition" />
-                </div>
-
-                <div>
-                  <div className="text-sm font-bold text-neutral-900 mb-2">I am applying to the Match:</div>
-                  <div className="space-y-2">
-                    {[
-                      "This year (Match 2027)",
-                      "In 2-3 years (Match 2028-2029)",
-                      "In 4-6 years",
-                      "Already Matched",
-                    ].map((opt, i) => (
-                      <label key={opt} className="flex items-center gap-2 cursor-pointer group">
-                        <input type="radio" name="match-year" defaultChecked={i === 0} className="w-4 h-4 accent-[#1AA7EC]" />
-                        <span className="text-sm text-neutral-800 group-hover:text-[#1AA7EC] transition-colors">{opt}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-2 rounded-md bg-[#1AA7EC] text-white px-6 py-4 text-base font-bold shadow-lg hover:bg-[#0e8fcf] transition-colors"
-                >
-                  <Download className="w-5 h-5" />
-                  Send me MATCH 2027 Resources!
-                </motion.button>
-              </form>
-            </motion.div>
-          </div>
-
-          <p className="mt-8 text-center text-sm md:text-base text-neutral-700 max-w-3xl mx-auto">
-            ERAS Application Template, 20+ Personal Statement Examples, Interview Prep, LOR, MSPE Resources &amp; More!
-            <br />
-            <span className="text-[#1AA7EC] font-semibold">Drafted by Physician MATCH Experts</span>
-            <span className="font-bold"> – ALL FOR FREE!</span>
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="mt-10 md:mt-12 flex justify-center"
+          >
+            <img
+              src={subscribeStudents.url}
+              alt="Medical students celebrating together"
+              className="w-full max-w-4xl h-auto object-contain"
+            />
+          </motion.div>
         </section>
+
 
         {/* Footer bar */}
 
