@@ -350,12 +350,12 @@ function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
-            className="mt-10 md:mt-12 flex justify-center"
+            className="mt-8 md:mt-10 flex justify-center items-end"
           >
             <img
               src={subscribeStudents.url}
               alt="Medical students celebrating together"
-              className="w-full max-w-4xl h-auto object-contain"
+              className="w-full max-w-5xl h-auto object-contain block"
             />
           </motion.div>
         </section>
