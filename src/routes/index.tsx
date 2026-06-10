@@ -10,6 +10,15 @@ import card4 from "@/assets/card-4.jpg";
 import card5 from "@/assets/card-5.jpg";
 import card6 from "@/assets/card-6.jpg";
 import card7 from "@/assets/card-7.jpg";
+import matched1 from "@/assets/matched-1.jpg";
+import matched2 from "@/assets/matched-2.jpg";
+import matched3 from "@/assets/matched-3.jpg";
+import matched4 from "@/assets/matched-4.jpg";
+import matched5 from "@/assets/matched-5.jpg";
+import matched6 from "@/assets/matched-6.jpg";
+import matched7 from "@/assets/matched-7.jpg";
+import matched8 from "@/assets/matched-8.jpg";
+import { Download } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
