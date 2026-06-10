@@ -18,6 +18,7 @@ import matched5 from "@/assets/matched-5.jpg";
 import matched6 from "@/assets/matched-6.jpg";
 import matched7 from "@/assets/matched-7.jpg";
 import matched8 from "@/assets/matched-8.jpg";
+import subscribeStudents from "@/assets/subscribe-students.png.asset.json";
 import { Download } from "lucide-react";
 
 export const Route = createFileRoute("/")({
