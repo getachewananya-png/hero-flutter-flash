@@ -193,12 +193,12 @@ function Index() {
                   initial={{ opacity: 0, x: c.from.x, y: c.from.y, rotate: c.from.rotate, scale: 0.6 }}
                   animate={
                     inAbout
-                      ? { opacity: 0, x: c.scatter.x, y: c.scatter.y, rotate: c.scatter.rotate, scale: 0.8 }
+                      ? { opacity: 1, x: [0, -8, 8, -6, 6, 0], y: [0, 4, -4, 3, -3, 0], rotate: [0, -2, 2, -1.5, 1.5, 0], scale: 1 }
                       : { opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }
                   }
                   transition={
                     inAbout
-                      ? { type: "spring", stiffness: 60, damping: 16 }
+                      ? { duration: 0.9, repeat: Infinity, repeatType: "loop", ease: "easeInOut", delay: i * 0.05 }
                       : { type: "spring", stiffness: 70, damping: 14, delay: 0.3 + i * 0.08 }
                   }
                   whileHover={!inAbout ? { y: -8, scale: 1.02 } : undefined}
