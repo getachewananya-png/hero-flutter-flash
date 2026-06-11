@@ -467,7 +467,124 @@ function Index() {
           </div>
         </motion.div>
       </div>
+
+      {/* Footer */}
+      <footer className="relative mt-24 md:mt-32">
+        {/* Top wavy skyline divider */}
+        <div className="relative">
+          <svg
+            viewBox="0 0 1440 220"
+            preserveAspectRatio="none"
+            className="block w-full h-[180px] md:h-[240px]"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,140 C160,80 320,200 520,150 C700,105 880,40 1080,90 C1240,130 1360,170 1440,150 L1440,220 L0,220 Z"
+              fill="#5a4af4"
+            />
+            <g fill="#ffffff" opacity="0.18">
+              {Array.from({ length: 60 }).map((_, i) => {
+                const x = i * 24 + (i % 3) * 4;
+                const h = 30 + ((i * 37) % 70);
+                const w = 14 + (i % 4) * 4;
+                return <rect key={i} x={x} y={220 - h - 35} width={w} height={h} rx="1" />;
+              })}
+            </g>
+            <g fill="#ffffff" opacity="0.22">
+              {Array.from({ length: 18 }).map((_, i) => {
+                const cx = 60 + i * 80;
+                const cy = 130 + ((i * 13) % 25);
+                return <circle key={i} cx={cx} cy={cy} r={3 + (i % 3)} />;
+              })}
+            </g>
+          </svg>
+        </div>
+
+        <div className="bg-[#5a4af4] text-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 pt-6 pb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+              {/* Newsletter */}
+              <div>
+                <h4 className="text-lg font-semibold">Match Mentor's Newsletter</h4>
+                <form
+                  onSubmit={(e) => e.preventDefault()}
+                  className="mt-5 space-y-3"
+                >
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    className="w-full px-4 py-3 rounded-md bg-white/10 placeholder-white/60 text-white border border-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 rounded-md bg-gradient-to-r from-[#e64a8a] to-[#a23a7a] text-white text-sm font-semibold tracking-wider hover:opacity-95 transition"
+                  >
+                    SUBSCRIBE
+                  </button>
+                </form>
+              </div>
+
+              {/* Terms */}
+              <div>
+                <h4 className="text-lg font-semibold">Terms and conditions</h4>
+                <ul className="mt-5 space-y-2 text-sm text-white/85">
+                  <li>Free resources!</li>
+                  <li>30 days refund policy!</li>
+                  <li>Verified mentors only!</li>
+                </ul>
+                <div className="mt-6 flex items-center gap-3 text-sm">
+                  <span className="font-medium">Follow Match Mentor</span>
+                  <a href="#" aria-label="Facebook" className="hover:opacity-80">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.4-2 2-2h2V2.1C16.5 2 15.3 2 14 2c-3 0-5 1.8-5 5v3H6v4h3v8h4z"/></svg>
+                  </a>
+                  <a href="#" aria-label="Instagram" className="hover:opacity-80">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Information */}
+              <div>
+                <h4 className="text-lg font-semibold">Information</h4>
+                <ul className="mt-5 space-y-2 text-sm text-white/85">
+                  <li><a href="#" className="hover:text-white">FAQs</a></li>
+                  <li><a href="#about" className="hover:text-white">About Match Mentor</a></li>
+                  <li><a href="#" className="hover:text-white">Legal</a></li>
+                </ul>
+                <ul className="mt-6 space-y-1 text-sm text-white/85">
+                  <li>+1 800 098 8300</li>
+                  <li>hello@matchmentor.com</li>
+                </ul>
+              </div>
+
+              {/* Contact */}
+              <div>
+                <h4 className="text-lg font-semibold">Contact</h4>
+                <div className="mt-5 text-sm text-white/85">
+                  <div className="font-semibold text-white">Match Mentor</div>
+                  <div>Company number: 559063-2377</div>
+                </div>
+                <div className="mt-5 text-sm text-white/85">
+                  <div className="font-semibold text-white">Head office</div>
+                  <div>Victoria Tower, Nolsögatan 3, 164</div>
+                  <div>40 Kista, Sweden</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom bar */}
+            <div className="mt-12 pt-8 border-t border-white/10 flex flex-col items-center gap-4 text-center">
+              <p className="text-sm text-white/85">
+                Part of Match Mentor Group, supporting medical residency applicants worldwide.
+              </p>
+              <p className="text-sm text-white/85">hello@matchmentor.com · +1 800 098 8300</p>
+              <p className="text-xs text-white/60 mt-2">© 2010–{new Date().getFullYear()} Match Mentor. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
+
   );
 }
 
