@@ -19,6 +19,7 @@ import matched6 from "@/assets/matched-6.jpg";
 import matched7 from "@/assets/matched-7.jpg";
 import matched8 from "@/assets/matched-8.jpg";
 import subscribeStudents from "@/assets/subscribe-students.png.asset.json";
+import footerBg from "@/assets/footer-bg.png.asset.json";
 import { Download } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -470,38 +471,16 @@ function Index() {
 
       {/* Footer */}
       <footer className="relative mt-24 md:mt-32">
-        {/* Top wavy skyline divider */}
-        <div className="relative">
-          <svg
-            viewBox="0 0 1440 220"
-            preserveAspectRatio="none"
-            className="block w-full h-[180px] md:h-[240px]"
-            aria-hidden="true"
-          >
-            <path
-              d="M0,140 C160,80 320,200 520,150 C700,105 880,40 1080,90 C1240,130 1360,170 1440,150 L1440,220 L0,220 Z"
-              fill="#5a4af4"
-            />
-            <g fill="#ffffff" opacity="0.18">
-              {Array.from({ length: 60 }).map((_, i) => {
-                const x = i * 24 + (i % 3) * 4;
-                const h = 30 + ((i * 37) % 70);
-                const w = 14 + (i % 4) * 4;
-                return <rect key={i} x={x} y={220 - h - 35} width={w} height={h} rx="1" />;
-              })}
-            </g>
-            <g fill="#ffffff" opacity="0.22">
-              {Array.from({ length: 18 }).map((_, i) => {
-                const cx = 60 + i * 80;
-                const cy = 130 + ((i * 13) % 25);
-                return <circle key={i} cx={cx} cy={cy} r={3 + (i % 3)} />;
-              })}
-            </g>
-          </svg>
-        </div>
+        {/* Skyline background image divider */}
+        <img
+          src={footerBg.url}
+          alt=""
+          aria-hidden="true"
+          className="block w-full h-auto select-none pointer-events-none -mb-px"
+        />
 
         <div className="bg-[#5a4af4] text-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 pt-6 pb-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 pt-2 pb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {/* Newsletter */}
               <div>
