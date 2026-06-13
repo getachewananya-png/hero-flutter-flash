@@ -470,17 +470,13 @@ function Index() {
       </div>
 
       {/* Footer */}
-      <footer className="relative mt-24 md:mt-32">
-        {/* Skyline background image divider */}
-        <img
-          src={footerBg.url}
-          alt=""
-          aria-hidden="true"
-          className="block w-full h-auto select-none pointer-events-none -mb-px"
-        />
+      <footer
+        className="relative mt-24 md:mt-32 text-white bg-no-repeat bg-top bg-contain"
+        style={{ backgroundImage: `url(${footerBg.url})`, backgroundColor: "transparent" }}
+      >
+        <div className="relative">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 pt-[18vw] md:pt-[14vw] lg:pt-[12vw] pb-12">
 
-        <div className="bg-[#5a4af4] text-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 pt-2 pb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {/* Newsletter */}
               <div>
