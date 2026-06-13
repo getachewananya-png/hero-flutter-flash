@@ -470,91 +470,111 @@ function Index() {
       </div>
 
       {/* Footer */}
-      <footer
-        className="relative mt-24 md:mt-32 text-white bg-no-repeat bg-top"
-        style={{ backgroundImage: `url(${footerBg.url})`, backgroundSize: "100% 100%" }}
-      >
-        <div className="relative">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 pt-[18vw] md:pt-[12vw] lg:pt-[9vw] pb-12">
+      <footer className="relative mt-24 md:mt-32 text-white bg-[#5a4af4] overflow-hidden">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 pt-20 pb-10">
+          {/* Newsletter hero */}
+          <div className="text-center">
+            <h2 className="font-extrabold tracking-tight text-white text-5xl md:text-7xl lg:text-8xl">
+              NEWSLETTER
+            </h2>
+            <p className="mt-6 text-white/90 max-w-2xl mx-auto text-base md:text-lg">
+              Match Mentor also has a newsletter! News, tips, and mentorship insights delivered to your inbox every week.
+            </p>
+            <p className="mt-8 font-semibold text-white">Sign up for free!</p>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto"
+            >
+              <input
+                type="email"
+                placeholder="E-mail*"
+                className="flex-1 w-full px-5 py-3 rounded-full bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/60"
+              />
+              <button
+                type="submit"
+                className="px-7 py-3 rounded-full bg-gradient-to-r from-[#c084fc] to-[#a855f7] text-white font-bold tracking-wide hover:opacity-95 transition whitespace-nowrap"
+              >
+                SUBSCRIBE ME
+              </button>
+            </form>
+            <p className="mt-3 text-xs text-white/70">By signing up, you agree to our privacy policy.</p>
+          </div>
 
+          {/* Wave divider */}
+          <div className="my-14 h-px bg-white/15" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {/* Newsletter */}
-              <div>
-                <h4 className="text-lg font-semibold">Match Mentor's Newsletter</h4>
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className="mt-5 space-y-3"
-                >
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="w-full px-4 py-3 rounded-md bg-white/10 placeholder-white/60 text-white border border-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
-                  />
-                  <button
-                    type="submit"
-                    className="px-6 py-3 rounded-md bg-gradient-to-r from-[#e64a8a] to-[#a23a7a] text-white text-sm font-semibold tracking-wider hover:opacity-95 transition"
-                  >
-                    SUBSCRIBE
-                  </button>
-                </form>
-              </div>
-
-              {/* Terms */}
-              <div>
-                <h4 className="text-lg font-semibold">Terms and conditions</h4>
-                <ul className="mt-5 space-y-2 text-sm text-white/85">
-                  <li>Free resources!</li>
-                  <li>30 days refund policy!</li>
-                  <li>Verified mentors only!</li>
-                </ul>
-                <div className="mt-6 flex items-center gap-3 text-sm">
-                  <span className="font-medium">Follow Match Mentor</span>
-                  <a href="#" aria-label="Facebook" className="hover:opacity-80">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.4-2 2-2h2V2.1C16.5 2 15.3 2 14 2c-3 0-5 1.8-5 5v3H6v4h3v8h4z"/></svg>
-                  </a>
-                  <a href="#" aria-label="Instagram" className="hover:opacity-80">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-                  </a>
-                </div>
-              </div>
-
-              {/* Information */}
-              <div>
-                <h4 className="text-lg font-semibold">Information</h4>
-                <ul className="mt-5 space-y-2 text-sm text-white/85">
-                  <li><a href="#" className="hover:text-white">FAQs</a></li>
-                  <li><a href="#about" className="hover:text-white">About Match Mentor</a></li>
-                  <li><a href="#" className="hover:text-white">Legal</a></li>
-                </ul>
-                <ul className="mt-6 space-y-1 text-sm text-white/85">
-                  <li>+1 800 098 8300</li>
-                  <li>hello@matchmentor.com</li>
-                </ul>
-              </div>
-
-              {/* Contact */}
-              <div>
-                <h4 className="text-lg font-semibold">Contact</h4>
-                <div className="mt-5 text-sm text-white/85">
-                  <div className="font-semibold text-white">Match Mentor</div>
-                  <div>Company number: 559063-2377</div>
-                </div>
-                <div className="mt-5 text-sm text-white/85">
-                  <div className="font-semibold text-white">Head office</div>
-                  <div>Victoria Tower, Nolsögatan 3, 164</div>
-                  <div>40 Kista, Sweden</div>
-                </div>
+          {/* Link columns */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div>
+              <h4 className="text-sm font-bold tracking-widest text-white">SERVICES</h4>
+              <ul className="mt-5 space-y-3 text-sm text-white/85">
+                <li><a href="#" className="hover:text-white">Mentorship</a></li>
+                <li><a href="#" className="hover:text-white">Coaching</a></li>
+                <li><a href="#" className="hover:text-white">Workshops</a></li>
+                <li><a href="#" className="hover:text-white">Match Mentor Club</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold tracking-widest text-white">SOLUTIONS</h4>
+              <ul className="mt-5 space-y-3 text-sm text-white/85">
+                <li><a href="#" className="hover:text-white">For students</a></li>
+                <li><a href="#" className="hover:text-white">For mentors</a></li>
+                <li><a href="#" className="hover:text-white">For schools</a></li>
+                <li><a href="#" className="hover:text-white">For companies</a></li>
+                <li><a href="#" className="hover:text-white">Group sessions</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold tracking-widest text-white">MATCH MENTOR</h4>
+              <ul className="mt-5 space-y-3 text-sm text-white/85">
+                <li><a href="#" className="hover:text-white">Partners</a></li>
+                <li><a href="#" className="hover:text-white">Join us</a></li>
+                <li><a href="#" className="hover:text-white">Contact us</a></li>
+                <li><a href="#" className="hover:text-white">Site Map</a></li>
+                <li><a href="#" className="hover:text-white">All our articles</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold tracking-widest text-white">JOIN THE CLUB</h4>
+              <p className="mt-5 text-sm text-white/85">
+                Receive exclusive mentorship tips and career advice from Match Mentor. It's free!
+              </p>
+              <form onSubmit={(e) => e.preventDefault()} className="mt-4 flex items-center gap-2">
+                <input
+                  type="email"
+                  className="flex-1 px-4 py-2 rounded-full bg-white/15 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/40"
+                />
+                <button className="px-5 py-2 rounded-full bg-gradient-to-r from-[#c084fc] to-[#a855f7] text-white font-bold text-sm">
+                  SUBMIT
+                </button>
+              </form>
+              <div className="mt-5 flex items-center gap-3">
+                <a href="#" aria-label="Instagram" className="hover:opacity-80">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn" className="hover:opacity-80">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8h4.56v14H.22V8zm7.5 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v7.44h-4.56v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V22H7.72V8z"/></svg>
+                </a>
               </div>
             </div>
+          </div>
 
-            {/* Bottom bar */}
-            <div className="mt-12 pt-8 border-t border-white/10 flex flex-col items-center gap-4 text-center">
-              <p className="text-sm text-white/85">
-                Part of Match Mentor Group, supporting medical residency applicants worldwide.
-              </p>
-              <p className="text-sm text-white/85">hello@matchmentor.com · +1 800 098 8300</p>
-              <p className="text-xs text-white/60 mt-2">© 2010–{new Date().getFullYear()} Match Mentor. All rights reserved.</p>
+          {/* Giant brand text */}
+          <div className="mt-16 text-center">
+            <h1 className="font-extrabold tracking-tighter text-white leading-none text-[18vw] md:text-[16vw]">
+              Match Mentor
+            </h1>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="mt-10 pt-6 border-t border-white/15 flex flex-col md:flex-row md:justify-between gap-4 text-xs text-white/75">
+            <div>
+              <p>© {new Date().getFullYear()} Match Mentor. All rights reserved.</p>
+              <p className="mt-1">hello@matchmentor.com · +1 800 098 8300</p>
+            </div>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-white">Legal notices</a>
+              <a href="#" className="hover:text-white">Privacy Policy</a>
             </div>
           </div>
         </div>
