@@ -357,39 +357,39 @@ function Index() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="rounded-3xl bg-[#fde047] p-6 md:p-8 shadow-2xl"
+              className="rounded-3xl bg-black p-8 md:p-10 shadow-2xl h-full"
             >
-              <h3 className="text-[#5a4af4] font-extrabold text-2xl md:text-3xl">
+              <h3 className="text-white font-extrabold text-2xl md:text-3xl">
                 Delivered Right To Your Inbox ✉️
               </h3>
 
-              <form onSubmit={(e) => e.preventDefault()} className="mt-6 space-y-4">
-                <div className="grid grid-cols-2 gap-3">
+              <form onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-5">
+                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#3b2db8] mb-1">First Name</label>
-                    <input type="text" className="w-full rounded-lg bg-white/70 border border-white/80 px-3 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="Jane" />
+                    <label className="block text-xs font-bold text-white/90 mb-1.5">First Name</label>
+                    <input type="text" className="w-full rounded-lg bg-neutral-900 border border-neutral-700 px-3.5 py-3 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="Jane" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-[#3b2db8] mb-1">Last Name</label>
-                    <input type="text" className="w-full rounded-lg bg-white/70 border border-white/80 px-3 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="Doe" />
+                    <label className="block text-xs font-bold text-white/90 mb-1.5">Last Name</label>
+                    <input type="text" className="w-full rounded-lg bg-neutral-900 border border-neutral-700 px-3.5 py-3 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="Doe" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#3b2db8] mb-1">Email Address</label>
-                  <input type="email" className="w-full rounded-lg bg-white/70 border border-white/80 px-3 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="you@example.com" />
+                  <label className="block text-xs font-bold text-white/90 mb-1.5">Email Address</label>
+                  <input type="email" className="w-full rounded-lg bg-neutral-900 border border-neutral-700 px-3.5 py-3 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="you@example.com" />
                 </div>
 
                 <div>
-                  <p className="text-xs font-bold text-[#3b2db8] mb-2">I am applying to the Match:</p>
-                  <div className="space-y-1.5">
+                  <p className="text-xs font-bold text-white/90 mb-3">I am applying to the Match:</p>
+                  <div className="space-y-2.5">
                     {[
                       "This year (Match 2027)",
                       "In 2-3 years (Match 2028-2029)",
                       "In 4-6 years",
                       "Already Matched",
                     ].map((label, i) => (
-                      <label key={label} className="flex items-center gap-2 text-sm text-[#3b2db8] cursor-pointer">
+                      <label key={label} className="flex items-center gap-2.5 text-sm text-white/80 cursor-pointer">
                         <input type="radio" name="match-timing" defaultChecked={i === 0} className="accent-[#5a4af4]" />
                         {label}
                       </label>
@@ -399,7 +399,7 @@ function Index() {
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#5a4af4] hover:bg-[#4a3ad4] transition-colors text-white font-bold py-3.5 shadow-lg"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#5a4af4] hover:bg-[#4a3ad4] transition-colors text-white font-bold py-4 shadow-lg"
                 >
                   <Download className="size-4" />
                   Send me MATCH 2027 Resources!
