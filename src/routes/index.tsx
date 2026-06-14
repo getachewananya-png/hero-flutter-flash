@@ -334,7 +334,7 @@ function Index() {
               </p>
 
               <div className="relative mt-8 max-w-md">
-                <div aria-hidden className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-[#fde047]/40 to-[#c084fc]/40 blur-xl" />
+                <div aria-hidden className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-white/30 to-[#c084fc]/40 blur-xl" />
                 <div className="relative rounded-2xl overflow-hidden border-4 border-white/90 shadow-2xl rotate-[-2deg]">
                   <img
                     src={matchResourcesCollage}
@@ -345,7 +345,7 @@ function Index() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <div aria-hidden className="absolute -bottom-3 -right-3 rounded-full bg-[#fde047] text-[#5a4af4] font-extrabold text-xs px-3 py-2 shadow-lg rotate-6">
+                <div aria-hidden className="absolute -bottom-3 -right-3 rounded-full bg-white text-[#5a4af4] font-extrabold text-xs px-3 py-2 shadow-lg rotate-6">
                   100% FREE
                 </div>
               </div>
