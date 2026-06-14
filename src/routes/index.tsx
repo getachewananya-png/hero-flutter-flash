@@ -83,8 +83,16 @@ function Index() {
             <span className="text-xl font-extrabold tracking-tight">Match Mentor</span>
           </div>
           <ul className="hidden md:flex items-center gap-9 text-sm font-medium text-neutral-800">
-            {["Home", "Guides", "Mentors", "Resources", "About"].map((l) => (
-              <li key={l} className="hover:text-[#1E5F8A] cursor-pointer transition-colors">{l}</li>
+            {[
+              { label: "Home", to: "/" },
+              { label: "Guides", to: "/guides" },
+              { label: "Mentors", to: "/mentors" },
+              { label: "Resources", to: "/resources" },
+              { label: "About", to: "/about" },
+            ].map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="hover:text-[#1E5F8A] transition-colors">{l.label}</Link>
+              </li>
             ))}
           </ul>
           <div className="flex items-center gap-4">
