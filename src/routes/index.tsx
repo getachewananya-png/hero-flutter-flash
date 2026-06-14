@@ -305,6 +305,110 @@ function Index() {
           </motion.div>
         </section>
 
+        {/* Match Resources section */}
+        <section id="match-resources" className="mt-24 md:mt-32 relative overflow-hidden rounded-[32px] bg-[#5a4af4] px-6 md:px-10 py-12 md:py-16">
+          {/* decorative blobs */}
+          <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#a78bfa]/30 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-[#c084fc]/25 blur-3xl" />
+
+          <div className="relative grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left: image / info */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="text-white"
+            >
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-3 py-1 text-xs font-medium backdrop-blur">
+                <Sparkles className="size-3.5" /> Free Resource Pack
+              </span>
+              <h2 className="mt-5 font-extrabold tracking-tight text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.05]">
+                All-In-One <span className="text-[#fde047]">MATCH®</span> Resources
+              </h2>
+              <p className="mt-4 text-white/80 text-base md:text-lg max-w-md">
+                ERAS Application Template, 20+ Personal Statement Examples, Interview Prep, LOR, MSPE Resources & More!
+              </p>
+              <p className="mt-2 text-[#fde047] font-semibold">
+                Drafted by Physician MATCH Experts — ALL FOR FREE!
+              </p>
+
+              <div className="relative mt-8 max-w-md">
+                <div aria-hidden className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-[#fde047]/40 to-[#c084fc]/40 blur-xl" />
+                <div className="relative rounded-2xl overflow-hidden border-4 border-white/90 shadow-2xl rotate-[-2deg]">
+                  <img
+                    src={matchResourcesCollage}
+                    alt="Match 2027 Resources — students who matched"
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <div aria-hidden className="absolute -bottom-3 -right-3 rounded-full bg-[#fde047] text-[#5a4af4] font-extrabold text-xs px-3 py-2 shadow-lg rotate-6">
+                  100% FREE
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right: form card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="rounded-3xl bg-[#fde047] p-6 md:p-8 shadow-2xl"
+            >
+              <h3 className="text-[#5a4af4] font-extrabold text-2xl md:text-3xl">
+                Delivered Right To Your Inbox ✉️
+              </h3>
+
+              <form onSubmit={(e) => e.preventDefault()} className="mt-6 space-y-4">
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-bold text-[#3b2db8] mb-1">First Name</label>
+                    <input type="text" className="w-full rounded-lg bg-white/70 border border-white/80 px-3 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="Jane" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-[#3b2db8] mb-1">Last Name</label>
+                    <input type="text" className="w-full rounded-lg bg-white/70 border border-white/80 px-3 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="Doe" />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-[#3b2db8] mb-1">Email Address</label>
+                  <input type="email" className="w-full rounded-lg bg-white/70 border border-white/80 px-3 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#5a4af4]" placeholder="you@example.com" />
+                </div>
+
+                <div>
+                  <p className="text-xs font-bold text-[#3b2db8] mb-2">I am applying to the Match:</p>
+                  <div className="space-y-1.5">
+                    {[
+                      "This year (Match 2027)",
+                      "In 2-3 years (Match 2028-2029)",
+                      "In 4-6 years",
+                      "Already Matched",
+                    ].map((label, i) => (
+                      <label key={label} className="flex items-center gap-2 text-sm text-[#3b2db8] cursor-pointer">
+                        <input type="radio" name="match-timing" defaultChecked={i === 0} className="accent-[#5a4af4]" />
+                        {label}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#5a4af4] hover:bg-[#4a3ad4] transition-colors text-white font-bold py-3.5 shadow-lg"
+                >
+                  <Download className="size-4" />
+                  Send me MATCH 2027 Resources!
+                </button>
+              </form>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Subscribe section */}
         <section id="subscribe" className="mt-24 md:mt-32 relative overflow-hidden rounded-[36px] bg-gradient-to-b from-[#eaf4fb] to-[#fdfcf8] px-6 md:px-10 pt-14 md:pt-20">
           <motion.div
