@@ -13,6 +13,6 @@ export default defineConfig({
     tanstackStart({
       server: { entry: "server" },
     }),
-    nitro(),
+        lovableConfig({ nitro: true }),
   ],
 });
