@@ -20,7 +20,8 @@ import matched7 from "@/assets/matched-7.jpg";
 import matched8 from "@/assets/matched-8.jpg";
 import subscribeStudents from "@/assets/subscribe-students.png.asset.json";
 import footerBg from "@/assets/footer-bg.png.asset.json";
-import { Download } from "lucide-react";
+import { Download, Sparkles } from "lucide-react";
+import matchResourcesCollage from "@/assets/match-resources-collage.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
