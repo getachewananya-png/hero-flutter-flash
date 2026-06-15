@@ -314,7 +314,7 @@ function Index() {
         </section>
 
         {/* Match Resources section */}
-        <section id="match-resources" className="mt-24 md:mt-32 relative overflow-hidden rounded-[32px] bg-[#5a4af4] px-8 md:px-16 py-12 md:py-16">
+        <section id="match-resources" className="mt-24 md:mt-32 relative overflow-hidden rounded-[32px] bg-[#5a4af4] px-10 md:px-20 py-12 md:py-16">
           {/* decorative blobs */}
           <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#a78bfa]/30 blur-3xl" />
           <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-[#c084fc]/25 blur-3xl" />
