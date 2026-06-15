@@ -5,14 +5,9 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import { tanstackStart } from '@tanstack/react-start/plugin/vite';
-import { nitro } from 'nitro/vite';
 
 export default defineConfig({
-  plugins: [
-    tanstackStart({
-      server: { entry: "server" },
-    }),
-        
-  ],
+  tanstackStart: {
+    server: { entry: "server" },
+  },
 });
