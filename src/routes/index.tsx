@@ -130,11 +130,21 @@ function Index() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="absolute right-0 top-6 hidden lg:flex items-center -space-x-3"
           >
-            <div className="w-10 h-10 rounded-full border-2 border-white bg-[#F5B027]" />
-            <div className="w-10 h-10 rounded-full border-2 border-white bg-[#1E5F8A]" />
-            <div className="w-10 h-10 rounded-full border-2 border-white bg-neutral-900 flex items-center justify-center">
-              <Plus className="w-4 h-4 text-white" />
-            </div>
+            <img
+              src={matched1}
+              alt="Mentor"
+              className="w-10 h-10 rounded-full border-2 border-white object-cover"
+            />
+            <img
+              src={matched2}
+              alt="Mentor"
+              className="w-10 h-10 rounded-full border-2 border-white object-cover"
+            />
+            <img
+              src={matched3}
+              alt="Mentor"
+              className="w-10 h-10 rounded-full border-2 border-white object-cover"
+            />
           </motion.div>
 
           <motion.h1
