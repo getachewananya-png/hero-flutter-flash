@@ -594,7 +594,7 @@ function Index() {
 
       {/* Footer */}
       <footer className="relative mt-24 md:mt-32 mx-4 md:mx-8 mb-4 md:mb-8 text-white bg-[#5a4af4] overflow-hidden rounded-3xl md:rounded-[2.5rem]">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 pt-20 pb-10">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 pt-20">
           {/* Newsletter hero */}
           <div className="text-center">
             <h2 className="font-extrabold tracking-tight text-white text-5xl md:text-7xl lg:text-8xl">
@@ -622,24 +622,25 @@ function Index() {
             </form>
             <p className="mt-3 text-xs text-white/70">By signing up, you agree to our privacy policy.</p>
           </div>
+        </div>
 
-          {/* Wave divider */}
-          <div className="my-14 -mx-4 sm:-mx-6 md:-mx-10">
-            <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="w-full h-12 md:h-16" aria-hidden="true">
-              <path
-                d="M0,40 C150,80 300,0 450,30 C600,60 750,20 900,40 C1050,60 1150,30 1200,40 L1200,80 L0,80 Z"
-                fill="rgba(255,255,255,0.12)"
-              />
-              <path
-                d="M0,50 C150,90 300,10 450,40 C600,70 750,30 900,50 C1050,70 1150,40 1200,50"
-                fill="none"
-                stroke="rgba(255,255,255,0.35)"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+        {/* Wave divider - full footer width */}
+        <div className="my-14">
+          <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="w-full h-12 md:h-16" aria-hidden="true">
+            <path
+              d="M0,40 C150,80 300,0 450,30 C600,60 750,20 900,40 C1050,60 1150,30 1200,40 L1200,80 L0,80 Z"
+              fill="rgba(255,255,255,0.12)"
+            />
+            <path
+              d="M0,50 C150,90 300,10 450,40 C600,70 750,30 900,50 C1050,70 1150,40 1200,50"
+              fill="none"
+              stroke="rgba(255,255,255,0.35)"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
 
-
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 pb-10">
           {/* Link columns */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             <div>
