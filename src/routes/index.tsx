@@ -475,7 +475,7 @@ function Index() {
         </section>
 
         {/* Blogs section */}
-        <section id="blogs" className="mt-24 md:mt-32">
+        <section id="blogs" className="mt-24 md:mt-32 px-6 md:px-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
