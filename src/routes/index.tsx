@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Search, Play, ArrowUpRight, ArrowRight, Plus, Mail, TrendingUp, Layers, Compass } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/match-mentor-logo.png.asset.json";
+import logo from "@/assets/match-mentor-logo.png";
 import card1 from "@/assets/card-1.jpg";
 import card2 from "@/assets/card-2.jpg";
 import card3 from "@/assets/card-3.jpg";
@@ -18,7 +18,7 @@ import matched5 from "@/assets/matched-5.jpg";
 import matched6 from "@/assets/matched-6.jpg";
 import matched7 from "@/assets/matched-7.jpg";
 import matched8 from "@/assets/matched-8.jpg";
-import subscribeStudents from "@/assets/subscribe-students.png.asset.json";
+import subscribeStudents from "@/assets/subscribe-students.png";
 import footerBg from "@/assets/footer-bg.png.asset.json";
 import { Download, Sparkles } from "lucide-react";
 import matchResourcesCollage from "@/assets/match-resources-collage.jpg";
@@ -79,7 +79,7 @@ function Index() {
           className="flex items-center justify-between"
         >
           <div className="flex items-center gap-2">
-            <img src={logo.url} alt="Match Mentor" className="h-10 w-auto" />
+            <img src={logo} alt="Match Mentor" className="h-10 w-auto" />
             <span className="text-xl font-extrabold tracking-tight">Match Mentor</span>
           </div>
           <ul className="hidden md:flex items-center gap-9 text-sm font-medium text-neutral-800">
@@ -477,7 +477,7 @@ function Index() {
             className="mt-8 md:mt-10 flex justify-center items-end"
           >
             <img
-              src={subscribeStudents.url}
+              src={subscribeStudents}
               alt="Medical students celebrating together"
               className="w-full max-w-5xl h-auto object-contain block"
             />
