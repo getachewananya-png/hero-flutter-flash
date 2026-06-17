@@ -263,9 +263,9 @@ function Index() {
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05]">
               Feeling Stuck or<br />
               Overwhelmed on the road to{" "}
-              <span className="text-[#F26B1F]">Residency?</span>
+              <span className="text-[#5a4af4]">Residency?</span>
             </h2>
-            <button className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#F26B1F] text-white px-6 py-3 text-sm font-medium shadow-md hover:bg-[#d85a14] transition-colors">
+            <button className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#5a4af4] text-white px-6 py-3 text-sm font-medium shadow-md hover:bg-[#4a3ad4] transition-colors">
               Let's Find Out
             </button>
             <ul className="mt-7 space-y-3 text-sm text-neutral-700">
@@ -313,7 +313,7 @@ function Index() {
               { icon: Compass,    title: "Lack Clarity", text: "Without a clear roadmap, every decision feels risky, slow, and emotionally exhausting to make." },
             ].map(({ icon: Icon, title, text }) => (
               <div key={title} className="flex gap-3">
-                <div className="text-[#F26B1F] mt-0.5"><Icon className="w-5 h-5" /></div>
+                <div className="text-[#5a4af4] mt-0.5"><Icon className="w-5 h-5" /></div>
                 <div>
                   <div className="font-semibold">{title}</div>
                   <p className="mt-1 text-sm text-neutral-600 max-w-xs">{text}</p>
@@ -342,12 +342,12 @@ function Index() {
                 <Sparkles className="size-3.5" /> Free Resource Pack
               </span>
               <h2 className="mt-5 font-extrabold tracking-tight text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.05]">
-                All-In-One <span className="text-[#fde047]">MATCH®</span> Resources
+                All-In-One <span className="text-[#0A0A0A]">MATCH®</span> Resources
               </h2>
               <p className="mt-4 text-white/80 text-base md:text-lg max-w-md">
                 ERAS Application Template, 20+ Personal Statement Examples, Interview Prep, LOR, MSPE Resources & More!
               </p>
-              <p className="mt-2 text-[#fde047] font-semibold">
+              <p className="mt-2 text-[#0A0A0A font-semibold">
                 Drafted by Physician MATCH Experts — ALL FOR FREE!
               </p>
 
