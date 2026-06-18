@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Search, Plus } from "lucide-react";
-import logo from "@/assets/match-mentor-logo.png.asset.json";
+import logo from "@/assets/match-mentor-logo.png";
 import type { ReactNode } from "react";
 
 const NAV = [
@@ -9,6 +9,7 @@ const NAV = [
   { label: "Guides", to: "/guides" },
   { label: "Mentors", to: "/mentors" },
   { label: "Resources", to: "/resources" },
+  { label: "Blogs", to: "/blogs" },
   { label: "About", to: "/about" },
 ] as const;
 
@@ -33,7 +34,7 @@ export function PageShell({
           className="flex items-center justify-between"
         >
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo.url} alt="Match Mentor" className="h-10 w-auto" />
+            <img src={logo} alt="Match Mentor" className="h-10 w-auto" />
             <span className="text-xl font-extrabold tracking-tight">Match Mentor</span>
           </Link>
           <ul className="hidden md:flex items-center gap-9 text-sm font-medium text-neutral-800">

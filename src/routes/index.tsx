@@ -62,11 +62,20 @@ function Index() {
   const [email, setEmail] = useState("");
   const { scrollY } = useScroll();
   const [inAbout, setInAbout] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const threshold = typeof window !== "undefined" ? window.innerHeight * 0.45 : 400;
     setInAbout(y > threshold);
   });
+
+  const openVideoModal = (videoUrl: string) => {
+    setSelectedVideo(videoUrl);
+  };
+
+  const closeVideoModal = () => {
+    setSelectedVideo(null);
+  };
 
   return (
     <div className="min-h-screen bg-[#0e0e0e] p-3 md:p-5">
@@ -88,6 +97,7 @@ function Index() {
               { label: "Guides", to: "/guides" },
               { label: "Mentors", to: "/mentors" },
               { label: "Resources", to: "/resources" },
+              { label: "Blogs", to: "/blogs" },
               { label: "About", to: "/about" },
             ].map((l) => (
               <li key={l.label}>
@@ -210,7 +220,7 @@ function Index() {
                           transition={{ type: "spring", stiffness: 70, damping: 14, delay: 0.3 + i * 0.08 }}
                           className={`absolute inset-0 ${c.bg} group overflow-hidden rounded-[28px] shadow-lg cursor-pointer`}
                         >
-                          <CardInner c={c} />
+                          <CardInner c={c} onPlayClick={() => openVideoModal("https://www.youtube.com/embed/dQw4w9WgXcQ")} />
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -218,36 +228,34 @@ function Index() {
                 );
               }
               return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: c.from.x, y: c.from.y, rotate: c.from.rotate, scale: 0.6 }}
-                  animate={
-                    inAbout
-                      ? { opacity: 1, x: [0, -8, 8, -6, 6, 0], y: [0, 4, -4, 3, -3, 0], rotate: [0, -2, 2, -1.5, 1.5, 0], scale: 1 }
-                      : { opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }
-                  }
-                  transition={
-                    inAbout
-                      ? { duration: 0.9, repeat: Infinity, repeatType: "loop", ease: "easeInOut", delay: i * 0.05 }
-                      : { type: "spring", stiffness: 70, damping: 14, delay: 0.3 + i * 0.08 }
-                  }
-                  whileHover={!inAbout ? { y: -8, scale: 1.02 } : undefined}
-                  className={`${c.className} ${c.bg} group relative overflow-hidden rounded-[28px] shadow-lg cursor-pointer`}
-                >
-                  <CardInner c={c} />
-                </motion.div>
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: c.from.x, y: c.from.y, rotate: c.from.rotate, scale: 0.6 }}
+                    animate={
+                      inAbout
+                        ? { opacity: 1, x: [0, -8, 8, -6, 6, 0], y: [0, 4, -4, 3, -3, 0], rotate: [0, -2, 2, -1.5, 1.5, 0], scale: 1 }
+                        : { opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }
+                    }
+                    transition={
+                      inAbout
+                        ? { duration: 0.9, repeat: Infinity, repeatType: "loop", ease: "easeInOut", delay: i * 0.05 }
+                        : { type: "spring", stiffness: 70, damping: 14, delay: 0.3 + i * 0.08 }
+                    }
+                    whileHover={!inAbout ? { y: -8, scale: 1.02 } : undefined}
+                    className={`${c.className} ${c.bg} group relative overflow-hidden rounded-[28px] shadow-lg cursor-pointer`}
+                  >
+                    <CardInner c={c} onPlayClick={() => openVideoModal("https://www.youtube.com/embed/dQw4w9WgXcQ")} />
+                  </motion.div>
               );
             })}
           </div>
 
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: inAbout ? 0 : 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
+          <Link
+            to="/mentors"
             className="absolute left-1/2 -translate-x-1/2 bottom-6 z-10 flex items-center gap-2 rounded-full bg-neutral-900 text-white px-7 py-3.5 text-sm font-medium hover:bg-[#1E5F8A] transition-colors"
           >
             Explore Mentors <ArrowUpRight className="w-4 h-4" />
-          </motion.button>
+          </Link>
         </div>
 
         {/* About Us section */}
@@ -292,7 +300,7 @@ function Index() {
                     transition={{ type: "spring", stiffness: 80, damping: 18 }}
                     className={`absolute inset-0 ${HERO_CARD.bg} group overflow-hidden rounded-[32px] shadow-2xl cursor-pointer`}
                   >
-                    <CardInner c={HERO_CARD} />
+                    <CardInner c={HERO_CARD} onPlayClick={() => openVideoModal("https://www.youtube.com/embed/dQw4w9WgXcQ")} />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -377,7 +385,7 @@ function Index() {
               transition={{ duration: 0.6, delay: 0.15 }}
               className="rounded-3xl bg-black p-8 md:p-10 shadow-2xl h-full"
             >
-              <h3 className="text-white font-extrabold text-2xl md:text-3xl">
+              <h3 className="text-white font-extrabold tracking-tight text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.05]">
                 Delivered Right To Your Inbox ✉️
               </h3>
 
@@ -550,6 +558,12 @@ function Index() {
                       <span className="self-start text-[11px] font-medium tracking-wide text-[#5a4af4] border border-[#5a4af4]/40 rounded-full px-3 py-0.5">{b.tag}</span>
                       <h3 className="mt-4 text-lg font-bold leading-snug text-neutral-900">{b.title}</h3>
                       <p className="mt-2 text-sm text-neutral-600">{b.desc}</p>
+                      <Link 
+                        to={`/blog/${b.tag.toLowerCase().replace(/\s+/g, '-')}` as any}
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5a4af4] hover:text-[#4a3ad4] transition-colors"
+                      >
+                        Read More <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </>
                 )}
@@ -591,6 +605,35 @@ function Index() {
           </div>
         </motion.div>
       </div>
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={closeVideoModal}
+        >
+          <div 
+            className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeVideoModal}
+              className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 transition-colors"
+              aria-label="Close video"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+            <iframe
+              src={selectedVideo}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="relative mt-24 md:mt-32 mx-4 md:mx-8 mb-4 md:mb-8 text-white bg-[#5a4af4] overflow-hidden rounded-3xl md:rounded-[2.5rem]">
@@ -722,7 +765,7 @@ function Index() {
   );
 }
 
-function CardInner({ c }: { c: Card }) {
+function CardInner({ c, onPlayClick }: { c: Card; onPlayClick?: () => void }) {
   return (
     <>
       <video
@@ -738,7 +781,8 @@ function CardInner({ c }: { c: Card }) {
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
           whileHover={{ scale: 1.15 }}
-          className="w-14 h-14 rounded-full bg-white/95 backdrop-blur flex items-center justify-center shadow-xl opacity-90 group-hover:opacity-100 transition"
+          onClick={onPlayClick}
+          className="w-14 h-14 rounded-full bg-white/95 backdrop-blur flex items-center justify-center shadow-xl opacity-90 group-hover:opacity-100 transition cursor-pointer"
         >
           <Play className="w-5 h-5 text-neutral-900 fill-neutral-900 ml-0.5" />
         </motion.div>
